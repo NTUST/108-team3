@@ -103,7 +103,7 @@ a:hover
 /* List Styles                                                                   */
 /*********************************************************************************/
 
-	ul.style1
+ul.style1
 {
 	margin: 0;
 	padding: 0em 0em 0em 0em;
@@ -171,7 +171,6 @@ ul.style2 li:before
 {
 	display: inline-block;
 	padding: 4px;
-	background: #0C696E;
 }
 
 ul.style2 a
@@ -188,7 +187,7 @@ ul.style2 li:first-child
 
 ul.style2 .icon
 {
-	color: #FFF;
+	color: gray;
 }
 
 /*********************************************************************************/
@@ -550,7 +549,7 @@ ul.contact li a.icon-rss:before
 	overflow: hidden;
 	padding: 5em 0em;
 	background: #FFF;
-	text-align: center;
+	text-align: left;
 }
 
 #featured .major
@@ -583,43 +582,16 @@ ul.contact li a.icon-rss:before
 
 #featured h2
 {
-	text-align: center;
+	text-align: left;
 }
 
-#featured .icon
+
+.column
 {
-	position: relative;
-	display: inline-block;
-	width: 80px;
-	height: 80px;
-	background: #0C696E;
-	margin: 0px auto 20px auto;
-	line-height:  80px;
-	font-size: 2em;
-	text-align: center;
-	color: #FFF;
+	width: 100%;
+	height: auto;
 }
 
-.column1,  .column2,  .column3,  .column4
-{
-	width: 282px;
-}
-
-.column1,  .column2
-{
-	float: left;
-	margin-right: 24px;
-}
-
-.column3
-{
-	float: left;
-}
-
-.column4
-{
-	float: right;
-}
 
 #slider
 {
@@ -722,7 +694,7 @@ ul.contact li a.icon-rss:before
 	margin: 30px auto 0 auto;
 }
 
-#slider .indicator ul
+#slider .indicator 
 {
 	list-style: none;
 	padding: 0;
@@ -730,7 +702,7 @@ ul.contact li a.icon-rss:before
 	text-align: center;
 }
 
-#slider .indicator ul li
+#slider .indicator  li
 {
 	display: inline-block;
 	width: 12px;
@@ -759,8 +731,9 @@ border: 1px solid #777;
 }
 
 div.gallery img {
-width: 100%;
+width: 200px;
 height: auto;
+float: left;
 }
 
 div.desc {
