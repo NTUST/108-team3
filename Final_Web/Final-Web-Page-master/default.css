@@ -546,8 +546,8 @@ ul.contact li a.icon-rss:before
 
 	#featured-wrapper
 {
+	float:left;
 	overflow: hidden;
-	padding: 5em 0em;
 	background: #FFF;
 	text-align: left;
 }
@@ -722,21 +722,22 @@ ul.contact li a.icon-rss:before
 }
 
 /* 照片框框 */
-div.gallery {
+.gallery {
+min-height: 160px;
 border: 1px solid #ccc;
 }
 
-div.gallery:hover {
+.gallery:hover {
 border: 1px solid #777;
 }
 
-div.gallery img {
-width: 200px;
-height: auto;
-float: left;
+.gallery img {
+width: 240px;
+height: 158px;
+float:left;
 }
 
-div.desc {
+.desc {
 padding: 15px;
 text-align: center;
 }
