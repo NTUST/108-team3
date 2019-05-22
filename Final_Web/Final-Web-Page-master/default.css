@@ -679,14 +679,14 @@ ul.contact li a.icon-rss:before
 {
 	position: absolute;
 	top: 150px;
-	left: 0;
+	left: 75px;
 }
 
 #slider .next-button
 {
 	position: absolute;
 	top: 150px;
-	right: 0;
+	right: 75px;
 }
 
 #slider .indicator
@@ -719,6 +719,11 @@ ul.contact li a.icon-rss:before
 {
 	background: #505050;
 	border-top: solid 1px #505050;
+}
+img {
+  display: block;
+  margin-left: 150px;
+  margin-right: auto;
 }
 
 /* 照片框框 */
