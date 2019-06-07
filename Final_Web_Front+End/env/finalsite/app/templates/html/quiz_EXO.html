@@ -1,0 +1,252 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "js/jquery.slidertron-1.3.js" %}"></script>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" />
+    <link href="{% static "css/default.css" %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static "fonts/fonts.css" %}" rel="stylesheet" type="text/css" media="all" />
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><a href="{{"homepage"}}">Fans' Item Bank</a></h1>
+            </div>
+            <div id="menu">
+                <ol>
+                    <li class="icon icon-circle-blank"><a href="{{ "關於我們" }}"  title="">關於我們</a></li>   
+                    <li class="icon icon-circle-blank"><a href="{{ "最新消息" }}"  title="">最新消息</a></li>
+                    <div class="dropdown">
+                        <li class="icon icon-circle-blank"><a title="">題庫</a></li>
+                        <br>
+                        <div class="dropdown-content">
+                            <a href="{{ "itembank_BTS" }}">BTS</a>
+                            <a href="{{ "itembank_EXO" }}">EXO</a>
+                            <a href="{{ "itembank_GOT7" }}">GOT7</a>
+                            <a href="{{ "itembank_seventeen" }}">seventeen</a>
+                            <a href="{{ "itembank_SJ" }}">SJ</a>
+                            <a href="{{ "itembank_TWICE" }}">TWICE</a>    
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li class="icon icon-circle-blank"><a title="">模擬題</a></li>
+                        <br>
+                        <div class="dropdown-content">
+                            <a href="{{ "quiz_BTS" }}">BTS</a>
+                            <a href="{{ "quiz_EXO" }}">EXO</a>
+                            <a href="{{ "quiz_GOT7" }}">GOT7</a>
+                            <a href="{{ "quiz_seventeen" }}">seventeen</a>
+                            <a href="{{ "quiz_SJ" }}">SJ</a>
+                            <a href="{{ "quiz_TWICE" }}">TWICE</a>
+                        </div>
+                    </div>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="page" class="container">
+            <div id="container">
+            <div id="start"> EXO-L 是你！</div>
+            <div id="quiz" style="display: none">
+                <div id="question"></div>
+                <div id="qImg"></div>
+                <div id="choices">
+                    <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                    <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                    <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                </div>
+                <div id="timer">
+                    <div id="counter"></div>
+                    <div id="btimeGauge"></div>
+                    <div id="timeGauge"></div>
+                </div>
+                <div id="progress"></div>
+            </div>
+            <div id="scoreContainer" style="display: none"></div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright" class="container">
+        <p>&copy; Fans' Item Bank | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by TEAM 3.</p>
+    </div>
+<script>
+    // select all elements
+const start = document.getElementById("start");
+const quiz = document.getElementById("quiz");
+const question = document.getElementById("question");
+const qImg = document.getElementById("qImg");
+const choiceA = document.getElementById("A");
+const choiceB = document.getElementById("B");
+const choiceC = document.getElementById("C");
+const counter = document.getElementById("counter");
+const timeGauge = document.getElementById("timeGauge");
+const progress = document.getElementById("progress");
+const scoreDiv = document.getElementById("scoreContainer");
+
+// create our questions
+let questions = [
+    {
+        question : "EXO代言過很多產品，下列何者不是EXO代言過的產品？",
+        imgSrc : "{% static "img/EXO.png" %}",
+        choiceA : "樂天世界",
+        choiceB : "MLB棒球帽",
+        choiceC : "Flia",
+        correct : "C"
+    },{
+        question : "英國雜誌《Dazed》曾稱EXO為下列何者？",
+        imgSrc : "{% static "img/EXO.png" %}",
+        choiceA : "世界最大的男子組合",
+        choiceB : "史上最帥的男子組合",
+        choiceC : "世界最有魅力的男子組合",
+        correct : "A"
+    },{
+        question : "EXO的哪首歌曲曾成功入選哈利法塔前杜拜噴泉的表演音樂？",
+        imgSrc : "{% static "img/EXO.png" %}",
+        choiceA : "Power",
+        choiceB : "Growl",
+        choiceC : "Overdose",
+        correct : "A"
+    },{
+        question : "EXO的某位成員曾獲邀在國際奧委會（IOC）總會開幕式上演唱韓國國歌，請問該名成員是誰",
+        imgSrc : "{% static "img/EXO.png" %}",
+        choiceA : "Chen",
+        choiceB : "​伯賢",
+        choiceC : "D.O.",
+        correct : "B"
+    },{
+        question : "2019年綜藝節目《EXO 的爬梯子世界旅行》曾經來到台灣拍攝，請問下列何者為他們造訪過的城市？",
+        imgSrc : "{% static "img/EXO.png" %}",
+        choiceA : "高雄",
+        choiceB : "花蓮",
+        choiceC : "台中",
+        correct : "A"
+    }
+];
+
+// create some variables
+
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+let count = 0;
+const questionTime = 10; // 10s
+const gaugeWidth = 150; // 150px
+const gaugeUnit = gaugeWidth / questionTime;
+let TIMER;
+let score = 0;
+
+// render a question
+function renderQuestion(){
+    let q = questions[runningQuestion];
+    
+    question.innerHTML = "<p>"+ q.question +"</p>";
+    qImg.innerHTML = "<img src="+ q.imgSrc +">";
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+}
+
+start.addEventListener("click",startQuiz);
+
+// start quiz
+function startQuiz(){
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+    renderProgress();
+    renderCounter();
+    TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
+}
+
+// render progress
+function renderProgress(){
+    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+    }
+}
+
+// counter render
+
+function renderCounter(){
+    if(count <= questionTime){
+        counter.innerHTML = count;
+        timeGauge.style.width = count * gaugeUnit + "px";
+        count++
+    }else{
+        count = 0;
+        // change progress color to red
+        answerIsWrong();
+        if(runningQuestion < lastQuestion){
+            runningQuestion++;
+            renderQuestion();
+        }else{
+            // end the quiz and show the score
+            clearInterval(TIMER);
+            scoreRender();
+        }
+    }
+}
+
+// checkAnwer
+
+function checkAnswer(answer){
+    if( answer == questions[runningQuestion].correct){
+        // answer is correct
+        score++;
+        // change progress color to green
+        answerIsCorrect();
+    }else{
+        // answer is wrong
+        // change progress color to red
+        answerIsWrong();
+    }
+    count = 0;
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }else{
+        // end the quiz and show the score
+        clearInterval(TIMER);
+        scoreRender();
+    }
+}
+
+// answer is correct
+function answerIsCorrect(){
+    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+}
+
+// answer is Wrong
+function answerIsWrong(){
+    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+}
+
+// score render
+function scoreRender(){
+    scoreDiv.style.display = "block";
+    
+    // calculate the amount of question percent answered by the user
+    const scorePerCent = Math.round(100 * score/questions.length);
+    
+    // choose the image based on the scorePerCent
+    let img = (scorePerCent >= 80) ? "{% static "img/5.png" %}" :
+              (scorePerCent >= 60) ? "{% static "img/4.png" %}" :
+              (scorePerCent >= 40) ? "{% static "img/3.png" %}" :
+              (scorePerCent >= 20) ? "{% static "img/2.png" %}" :
+              "{% static "img/1.png" %}";
+    
+    scoreDiv.innerHTML = "<img src="+ img +">";
+    scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+}
+</script>
+</body>
+</html>
