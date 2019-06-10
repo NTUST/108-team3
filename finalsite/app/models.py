@@ -9,11 +9,14 @@ class Photo(models.Model):
 	image = models.ImageField(null=False, blank=False, width_field="width", height_field="height")
 	context = models.CharField(max_length=200)
 	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+	link = models.CharField(max_length=3000)
 
 	def __str__(self):
 		return self.context
 	def __str__(self):
 		return self.title
+	def __str__(self):
+		return self.link
 
 	class Meta:
 		ordering = ["-timestamp"]

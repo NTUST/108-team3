@@ -68,12 +68,12 @@
 						{% if forloop.counter == 1 %}
 						<div class="slide">
 							<a class="link" href="#">Full story ...</a>
-							<img src="{{  photo.image.url }}"  alt=""  />
+							<img src="{{  photo.image.url }}"  alt="" width="700" height="350"  />
 						</div>
 						{% endif %}
 						<div class="slide">	
 							<a class="link" href="#">Full story ...</a>
-							<img src="{{  photo.image.url }}"  alt=""  />
+							<img src="{{  photo.image.url }}"  alt=""  width="700" height="350"  />
 						</div>
 						{% endfor %}
 					</div>
@@ -107,7 +107,7 @@
 				<ul class="style2">
 					{% for photo in photos %}
 					{% if photo.image %}
-					<li class="icon icon-bullhorn"><a href="#">{{ photo.title }}</a></li>
+					<li class="icon icon-bullhorn"><a href="{{photo.link}}">{{ photo.title }}</a></li>
 					{% endif %}
 					{% endfor %}
 				</ul>
