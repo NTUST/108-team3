@@ -29,24 +29,18 @@
                         <li class="icon icon-circle-blank"><a title="">題庫</a></li>
                         <br>
                         <div class="dropdown-content">
-                            <a href="{{ "itembank_BTS" }}">BTS</a>
-                            <a href="{{ "itembank_EXO" }}">EXO</a>
-                            <a href="{{ "itembank_GOT7" }}">GOT7</a>
-                            <a href="{{ "itembank_seventeen" }}">seventeen</a>
-                            <a href="{{ "itembank_SJ" }}">SJ</a>
-                            <a href="{{ "itembank_TWICE" }}">TWICE</a>    
+                            {% for group in groups %}
+                                <a href="{{ group.descriptionlink }}">{{ group.name }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="dropdown">
                         <li class="icon icon-circle-blank"><a title="">模擬題</a></li>
                         <br>
                         <div class="dropdown-content">
-                            <a href="{{ "quiz_BTS" }}">BTS</a>
-                            <a href="{{ "quiz_EXO" }}">EXO</a>
-                            <a href="{{ "quiz_GOT7" }}">GOT7</a>
-                            <a href="{{ "quiz_seventeen" }}">seventeen</a>
-                            <a href="{{ "quiz_SJ" }}">SJ</a>
-                            <a href="{{ "quiz_TWICE" }}">TWICE</a>
+                            <{% for group in groups %}
+                                <a href="{{ group.quizlink }}">{{ group.name }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                 </ol>
@@ -95,42 +89,16 @@ const scoreDiv = document.getElementById("scoreContainer");
 
 // create our questions
 let questions = [
+    {% for q in quizs %}
     {
-        question : "1.請問綜藝節目《SEVENTEEN TV》拍到第幾季？",
+        question : "{{q.question}}",
         imgSrc : "{% static "img/seventeen.png" %}",
-        choiceA : "3",
-        choiceB : "4",
-        choiceC : "5",
-        correct : "C"
-    },{
-        question : "請問下列何Seventeen未曾代言過？",
-        imgSrc : "{% static "img/seventeen.png" %}",
-        choiceA : "炸雞店",
-        choiceB : "運動品牌Adidas",
-        choiceC : "美國香水品牌Clean",
-        correct : "B"
-    },{
-        question : "請問Seventeen哪首是各個小分隊隊長合作的歌曲？",
-        imgSrc : "{% static "img/seventeen.png" %}",
-        choiceA : "CHANGE UP",
-        choiceB : "Pinwheel",
-        choiceC : "TRAUMA",
-        correct : "A"
-    },{
-        question : "請問下列哪位成員不是Hip-pop小分隊的成員？",
-        imgSrc : "{% static "img/seventeen.png" %}",
-        choiceA : "DK",
-        choiceB : "​S.coups",
-        choiceC : "圓佑",
-        correct : "A"
-    },{
-        question : "請問Seventeen韓國與日本出道時間相差幾年？",
-        imgSrc : "{% static "img/seventeen.png" %}",
-        choiceA : "5",
-        choiceB : "4",
-        choiceC : "3",
-        correct : "C"
-    }
+        choiceA : "{{q.ansA}}",
+        choiceB : "{{q.ansB}}",
+        choiceC : "{{q.ansC}}",
+        correct : "{{q.real_ans}}"
+    },
+    {% endfor %}
 ];
 
 // create some variables

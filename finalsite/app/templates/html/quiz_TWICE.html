@@ -29,24 +29,18 @@
                         <li class="icon icon-circle-blank"><a title="">題庫</a></li>
                         <br>
                         <div class="dropdown-content">
-                            <a href="{{ "itembank_BTS" }}">BTS</a>
-                            <a href="{{ "itembank_EXO" }}">EXO</a>
-                            <a href="{{ "itembank_GOT7" }}">GOT7</a>
-                            <a href="{{ "itembank_seventeen" }}">seventeen</a>
-                            <a href="{{ "itembank_SJ" }}">SJ</a>
-                            <a href="{{ "itembank_TWICE" }}">TWICE</a>    
+                            {% for group in groups %}
+                                <a href="{{ group.descriptionlink }}">{{ group.name }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="dropdown">
                         <li class="icon icon-circle-blank"><a title="">模擬題</a></li>
                         <br>
                         <div class="dropdown-content">
-                            <a href="{{ "quiz_BTS" }}">BTS</a>
-                            <a href="{{ "quiz_EXO" }}">EXO</a>
-                            <a href="{{ "quiz_GOT7" }}">GOT7</a>
-                            <a href="{{ "quiz_seventeen" }}">seventeen</a>
-                            <a href="{{ "quiz_SJ" }}">SJ</a>
-                            <a href="{{ "quiz_TWICE" }}">TWICE</a>
+                            <{% for group in groups %}
+                                <a href="{{ group.quizlink }}">{{ group.name }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                 </ol>
@@ -95,42 +89,16 @@ const scoreDiv = document.getElementById("scoreContainer");
 
 // create our questions
 let questions = [
+    {% for q in quizs %}
     {
-        question : "請問 Twice第一首破4億的歌曲為哪首？",
+        question : "{{q.question}}",
         imgSrc : "{% static "img/TWICE.png" %}",
-        choiceA : "TT",
-        choiceB : "Likey",
-        choiceC : "Cheer up",
-        correct : "A"
-    },{
-        question : "​2019​年Twice擔任下列何者品牌的大使？",
-        imgSrc : "{% static "img/TWICE.png" %}",
-        choiceA : "M.A.C",
-        choiceB : "雅詩蘭黛",
-        choiceC : "Bobbi Brown",
-        correct : "B"
-    },{
-        question : "請問Twice出演的電影名稱為何",
-        imgSrc : "{% static "img/TWICE.png" %}",
-        choiceA : "TWICELAND",
-        choiceB : "TWICEWORLD",
-        choiceC : "TWICELIFE",
-        correct : "A"
-    },{
-        question : "請問Twice的問候語為下列何者",
-        imgSrc : "{% static "img/TWICE.png" %}",
-        choiceA : "To the world",
-        choiceB : "We are ONE",
-        choiceC : "One in a million",
-        correct : "C"
-    },{
-        question : "請問​Twice在何時日本NHK官方公布TWICE將第一次出演NHK紅白歌合戰？？",
-        imgSrc : "{% static "img/TWICE.png" %}",
-        choiceA : "2016",
-        choiceB : "2017",
-        choiceC : "2018",
-        correct : "B"
-    }
+        choiceA : "{{q.ansA}}",
+        choiceB : "{{q.ansB}}",
+        choiceC : "{{q.ansC}}",
+        correct : "{{q.real_ans}}"
+    },
+    {% endfor %}
 ];
 
 // create some variables

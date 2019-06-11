@@ -29,24 +29,18 @@
                         <li class="icon icon-circle-blank"><a title="">題庫</a></li>
                         <br>
                         <div class="dropdown-content">
-                            <a href="{{ "itembank_BTS" }}">BTS</a>
-                            <a href="{{ "itembank_EXO" }}">EXO</a>
-                            <a href="{{ "itembank_GOT7" }}">GOT7</a>
-                            <a href="{{ "itembank_seventeen" }}">seventeen</a>
-                            <a href="{{ "itembank_SJ" }}">SJ</a>
-                            <a href="{{ "itembank_TWICE" }}">TWICE</a>    
+                            {% for group in groups %}
+                                <a href="{{ group.descriptionlink }}">{{ group.name }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="dropdown">
                         <li class="icon icon-circle-blank"><a title="">模擬題</a></li>
                         <br>
                         <div class="dropdown-content">
-                            <a href="{{ "quiz_BTS" }}">BTS</a>
-                            <a href="{{ "quiz_EXO" }}">EXO</a>
-                            <a href="{{ "quiz_GOT7" }}">GOT7</a>
-                            <a href="{{ "quiz_seventeen" }}">seventeen</a>
-                            <a href="{{ "quiz_SJ" }}">SJ</a>
-                            <a href="{{ "quiz_TWICE" }}">TWICE</a>
+                            <{% for group in groups %}
+                                <a href="{{ group.quizlink }}">{{ group.name }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                 </ol>
@@ -95,42 +89,16 @@ const scoreDiv = document.getElementById("scoreContainer");
 
 // create our questions
 let questions = [
+    {% for q in quizs %}
     {
-        question : "Super junior有非常多小分隊，下列哪個成員不是小分隊SJ-T裡的成員？",
+        question : "{{q.question}}",
         imgSrc : "{% static "img/SJ.png" %}",
-        choiceA : "藝聲",
-        choiceB : "銀赫",
-        choiceC : "希澈",
-        correct : "A"
-    },{
-        question : "請問Super show巡迴演唱會到幾了？",
-        imgSrc : "{% static "img/SJ.png" %}",
-        choiceA : "７",
-        choiceB : "8",
-        choiceC : "9",
-        correct : "A"
-    },{
-        question : "Super junior的應援色為何？",
-        imgSrc : "{% static "img/SJ.png" %}",
-        choiceA : "深藍色",
-        choiceB : "寶藍色",
-        choiceC : "湖水綠",
-        correct : "B"
-    },{
-        question : "ELF的意思",
-        imgSrc : "{% static "img/SJ.png" %}",
-        choiceA : "永遠的朋友",
-        choiceB : "永遠的自己",
-        choiceC : "永遠的公主",
-        correct : "A"
-    },{
-        question : "Lo Siento 這首歌與哪個團體有合作過？",
-        imgSrc : "{% static "img/SJ.png" %}",
-        choiceA : "KARD",
-        choiceB : "F(x)",
-        choiceC : "Red Velvet",
-        correct : "A"
-    }
+        choiceA : "{{q.ansA}}",
+        choiceB : "{{q.ansB}}",
+        choiceC : "{{q.ansC}}",
+        correct : "{{q.real_ans}}"
+    },
+    {% endfor %}
 ];
 
 // create some variables

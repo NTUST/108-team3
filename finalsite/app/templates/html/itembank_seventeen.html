@@ -28,25 +28,18 @@
 						<li class="icon icon-circle-blank"><a title="">題庫</a></li>
 						<br>
 						<div class="dropdown-content">
-							<a href="{{ "itembank_BTS" }}">BTS</a>
-						    <a href="{{ "itembank_EXO" }}">EXO</a>
-						    <a href="{{ "itembank_GOT7" }}">GOT7</a>
-						    <a href="{{ "itembank_seventeen" }}">seventeen</a>
-						    <a href="{{ "itembank_SJ" }}">SJ</a>
-						    <a href="{{ "itembank_TWICE" }}">TWICE</a>
-						    
+							{% for group in groups %}
+	                            <a href="{{ group.descriptionlink }}">{{ group.name }}</a>
+							{% endfor %}
 						</div>
 					</div>
 					<div class="dropdown">
 						<li class="icon icon-circle-blank"><a title="">模擬題</a></li>
 						<br>
 						<div class="dropdown-content">
-						    <a href="{{ "quiz_BTS" }}">BTS</a>
-						    <a href="{{ "quiz_EXO" }}">EXO</a>
-						    <a href="{{ "quiz_GOT7" }}">GOT7</a>
-						    <a href="{{ "quiz_seventeen" }}">seventeen</a>
-						    <a href="{{ "quiz_SJ" }}">SJ</a>
-						    <a href="{{ "quiz_TWICE" }}">TWICE</a>
+						    <{% for group in groups %}
+	                            <a href="{{ group.quizlink }}">{{ group.name }}</a>
+							{% endfor %}
 						</div>
 					</div>
 				</ol>
@@ -58,118 +51,8 @@
 	<div id="page" class="container">
 		<div id="content">
 			<div class="title">
-				<h2>seventeen題庫</h2>
-<pre>
-Seventeen文字
-出道日期：
-	K:2015/05/26
-	J:2018/05/30
-粉絲名公佈日期：
-	2016/02/14
-
-韓語：
-正規專輯
-2016 Love & Letter
-2016 Love & Letter（改版專輯）
-2017 TEEN, AGE
-迷你專輯
-2015 17 CARAT
-2015 BOYS BE
-2016 Going Seventeen
-2017 Al1
-2018 YOU MAKE MY DAY
-2019 YOU MADE MY DAWN
-特別專輯
-2018 DIRECTOR'S CUT
-精選輯
-2016 17 Hits
-日語：
-迷你專輯
-2018 We Make You
-單曲
-2019 Happy Ending
-年齡（排序）：
-	S.coups 1995/08/08
-淨漢 1995/10/04
-Joshua 1995/12/30
-Jun 1996/06/10
-Hoshi 1996/06/15
-	圓佑 1996/07/17
-	Woozi 1996/11/22
-	DK 1997/02/18
-	珉奎 1997/04/06
-	The8 1997/11/07
-	勝寬 1998/01/16
-	Vernon 1998/02/18
-	Dino 1999/02/11
-
-歷年來臺：
-	2017/10/01
-	2018/10/06
-小分隊(第一個為隊長)：
-	Hip-pop: S.coups 圓佑 珉奎 Vernon
-	Vocal: WOOZI淨漢 Joshua DK 勝寛
-	Performance：Hoshi Jun The8 Dino
-MV破億：
-	2018/10/23 Don't Wanna Cry 破億
-	2+0+1+8+1+0+2+3=17
-廣告代言:
-	2016- 2017	美國香水品牌Clean	
-2016/12 – 2017/7	跑Online
-2017韓國炸雞店	
-2017 - 2018	Elite校服	
-2017/10 – 2018/10	德國運動品牌DYNAFIT	
-2018/1-	韓國化妝品品牌the SAEM	
-2018/9 -法國戶外品牌Lafuma
-2018 - (Nene Chicken)	
-2019 -ao+ 彩色隱形眼鏡
-演唱會：
-	2015 LIKE SEVENTEEN – Boys Wish
-	2016 LIKE SEVENTEEN – Boys Wish   Encore Concer
-	2016 LIKE SEVENTEEN – Shining Diamond CONCERT
-	2017 '17 JAPAN CONCERT Say the name #SEVENTEEN CONCERT
-	2017 SEVENTEEN 1ST WORLD TOUR “DIAMOND EDGE”
-	2018 SEVENTEEN JAPAN ARENA TOUR 'SVT' 
-	2018 SEVENTEEN CONCERT “IDEAL CUT”
-	2018 SEVENTEEN CONCERT “IDEAL CUT” The Final Scene in Seoul
-	2019 SEVENTEEN JAPAN TOUR 'HARU'
-專屬節目：
-SEVENTEEN TV Season 1
-SEVENTEEN TV Season 2
-SEVENTEEN TV Season 3
-SEVENTEEN TV Season 4
-SEVENTEEN TV Season 5
-仙女座放送
-SEVENTEEN PROJECT：出道大作戰
-我朋友的島在哪裡？
-SEVENTEEN Pre-Debut Film
-SEVENTEEN 美好的一天－13少年漂流記
-我朋友的故鄉在那裡 "Healing drive旅行"
-SEVENTEEN 美好的一天－13少年旅遊大亨
-密著！SEVENTEEN TV
-SVT CLUB
-真實！SEVENTEEN TV
-Seventeen的休日
-SEVENTEEN Special
-Star Road
-GOING SEVENTEEN 2019
-節目主持：
-正式主持：
-珉奎：
-2016/5/5/－6/16、7/7－7/21  M Countdown	實習MC	
-2016/6/4 第22屆夢想演唱會	一部MC	
-2016/11/27 Super Seoul Dream Concert	正式MC
-2017/1/26、2/2 Mnet	M Countdown	特別MC	
-2017/5/21 Mnet KCON 2017 JAPAN	 正式MC	
-2017/12/29 KBS2	KBS歌謠盛典2部 正式MC
-2018/2/18－10/28	SBS	人氣歌謠	固定MC	
-2018/11/11-2019/2/3	人氣歌謠 固定MC	
-2019/2/17 人氣歌謠 固定MC	
-參與作曲的主打歌：
-	Woozi：Adore U、Pretty U、MANSAE、VERY NICE、BOOMBOOM、Don’t Wanna Cry、CLAP、Thanks、CALL CALL CALL、Oh My!、Home
-初一位：
-	2016/5/4 Pretty U 《LOVE&LETTER》
-</pre>
+				<h2>{{Subject.name}}題庫</h2>
+				<pre>{{Subject.description}}</pre>
 			</div>
 		</div>
 	</div>		

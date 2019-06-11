@@ -36,24 +36,18 @@
 					<li class="icon icon-circle-blank"><a title="">題庫</a></li>
 					<br>
 					<div class="dropdown-content">
-						<a href="{{ "itembank_BTS" }}">BTS</a>
-					    <a href="{{ "itembank_EXO" }}">EXO</a>
-					    <a href="{{ "itembank_GOT7" }}">GOT7</a>
-					    <a href="{{ "itembank_seventeen" }}">seventeen</a>
-					    <a href="{{ "itembank_SJ" }}">SJ</a>
-					    <a href="{{ "itembank_TWICE" }}">TWICE</a>    
+						{% for group in groups %}
+                            <a href="{{ group.descriptionlink }}">{{ group.name }}</a>
+						{% endfor %}
 					</div>
 				</div>
 				<div class="dropdown">
 					<li class="icon icon-circle-blank"><a title="">模擬題</a></li>
 					<br>
 					<div class="dropdown-content">
-					    <a href="{{ "quiz_BTS" }}">BTS</a>
-					    <a href="{{ "quiz_EXO" }}">EXO</a>
-					    <a href="{{ "quiz_GOT7" }}">GOT7</a>
-					    <a href="{{ "quiz_seventeen" }}">seventeen</a>
-					    <a href="{{ "quiz_SJ" }}">SJ</a>
-					    <a href="{{ "quiz_TWICE" }}">TWICE</a>
+					    <{% for group in groups %}
+                            <a href="{{ group.quizlink }}">{{ group.name }}</a>
+						{% endfor %}
 					</div>
 				</div>
 			</ol>

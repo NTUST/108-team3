@@ -28,25 +28,18 @@
 						<li class="icon icon-circle-blank"><a title="">題庫</a></li>
 						<br>
 						<div class="dropdown-content">
-							<a href="{{ "itembank_BTS" }}">BTS</a>
-						    <a href="{{ "itembank_EXO" }}">EXO</a>
-						    <a href="{{ "itembank_GOT7" }}">GOT7</a>
-						    <a href="{{ "itembank_seventeen" }}">seventeen</a>
-						    <a href="{{ "itembank_SJ" }}">SJ</a>
-						    <a href="{{ "itembank_TWICE" }}">TWICE</a>
-						    
+							{% for group in groups %}
+	                            <a href="{{ group.descriptionlink }}">{{ group.name }}</a>
+							{% endfor %}
 						</div>
 					</div>
 					<div class="dropdown">
 						<li class="icon icon-circle-blank"><a title="">模擬題</a></li>
 						<br>
 						<div class="dropdown-content">
-						    <a href="{{ "quiz_BTS" }}">BTS</a>
-						    <a href="{{ "quiz_EXO" }}">EXO</a>
-						    <a href="{{ "quiz_GOT7" }}">GOT7</a>
-						    <a href="{{ "quiz_seventeen" }}">seventeen</a>
-						    <a href="{{ "quiz_SJ" }}">SJ</a>
-						    <a href="{{ "quiz_TWICE" }}">TWICE</a>
+						    <{% for group in groups %}
+	                            <a href="{{ group.quizlink }}">{{ group.name }}</a>
+							{% endfor %}
 						</div>
 					</div>
 				</ol>
@@ -58,131 +51,8 @@
 	<div id="page" class="container">
 		<div id="content">
 			<div class="title">
-				<h2>GOT7題庫</h2>
-<pre>
-GOT7文字
-出道期：
-      K：2014/01/16
-      J：2014/10/22
-粉絲名公佈期：
-      2014/05/09
-韓語：
-正規專輯
-Identify 2014/11/18
-FLIGHT LOG : TURBULENCE 2016/9/27
-Present: YOU 2018/9/17
-改版專輯
-MAD Winter Edition 2015/11/23
-7 for 7 Present Edition 2017/12/7
-<Present : YOU> &ME Edition 2018/12/3
-迷你專輯
-Got it? 2014/1/20
-GOT♡ 2014/6/23
-Just right 2015/7/13
-MAD 2015/9/29
-FLIGHT LOG : DEPARTURE 2016/3/21
-FLIGHT LOG : ARRIVAL 2017/3/13
-7 for 7 2017/10/10
-Eyes On You 2018/3/12
-SPINNING TOP : BETWEEN SECURITY & INSECURITY 2019/5/20
-日語：
-正規專輯
-翻天↑覆地  2016/2/3
-迷你專輯
-Hey Yah 2016/11/16
-TURN UP 2017/11/15
-I WON'T LET YOU GO 2019/1/30
-單曲
-AROUND THE WORLD 2014/10/22
-LOVE TRAIN 2015/6/10
-LAUGH LAUGH LAUGH 2015/9/23
-MY SWAGGER 2017/5/24
-THE New Era  2018/6/20
-年齡排序：
-Mark 1993/09/04
-JB 1994/01/06
-Jackson 1994/03/28
-珍榮1994/09/22
-YoungJae 1996/09/17
-BamBam 1997/05/02
-YuGyeom 1997/11/17
-歷年來臺：
-	2015/01/20、2017/01/16、2018/06/16、2019/04/14(Jus2)
-電影：
-	2017/3/1 雪花 珍榮
-電視劇：
-	2012 Dream High 2 JB
-	2015親愛的恩東啊 珍榮
-	2016 藍色海洋的傳説 珍榮
-	2019 會讀心術的那小子 珍榮
-專屬綜藝節目：
-	2014 Real GOT7
-	2014 I☆GOT7
-	2014 Real GOT7 Season 2
-2015 Real GOT7 Season 3
-2015 The Fanclub
-2015 Feel So Goods
-2015 Mission Clear
-2015 GOT2DAY
-2015 I want you to do this
-2016 GOT1DAY
-2016 GOT7ing
-2016 韓語講座
-2016 GOT2DAY 2016
-2016 GOT7的Hard Carry
-2017 GOT7ing+
-2017 Real GOT7 Season 4
-2017 GOTJacksonShow
-2017 GOT7ing+ : 7 for 7
-2017 #3分鐘GOT7
-2017 GOT2DAY 2017 Live
-2017 GOT7 的TMI 實驗室
-2018 GOT7:On the Scene	
-2018 Working Eat Holiday in Jeju
-2018 GOT7 COMEBACK SHOW
-2018 GOT7的Hard Carry 2
-  2018 GOT7 MONOGRAPH "Present : YOU"
-	2019 GOT7 Real Thai
-	2019 [GOT7 TOURGRAPH] WORLD TOUR 'EYES ON YOU'
-	2019 GOT7 MONOGRAPH "SPINNING TOP : BETWEEN SECURITY & INSECURITY"
-	2019 GOT7_PAGE
-廣告代言：
-	2014：Black Yak Walk Fit運動鞋
-Natuur POP冰淇淋	
-Smart 校服 	
-J.ESTINA友情戒指
-	2016：NBA Style 2016春夏服飾
-NBA Style 2016秋冬服飾
-Bausch + Lomb 博士倫隱形眼鏡	
-CGV Combo 合作活動	
-	2016-2018：It'S SKIN 韓系保養品
-est 可樂
-	2017-19：潮流前線
-	2017-18：小老闆海苔
-FWD保險
-	2018年	愛迪達Originals品牌全球大使
-	2018-19年	韓國消防廳宣傳大使	
-新世界免稅店
-THE FACE SHOP 韓系保養彩妝
-演唱會：
-	2014 首場日本巡迴演唱會--AROUND THE WORLD
-	2016 2016年日本巡迴演唱會--翻天↑覆地
-2016 2016 GOT7 1st CONCERT 「FLY」世界巡迴演唱會
-2017 GOT7首場泰國巡迴演唱會 GOT7 Thailand Tour 2017「NESTIVAL」
-2017 GOT7 ARENA SPECIAL 2017 「MY SWAGGER」
-2017 GOT7 Japan Tour 2017 "TURN UP"
-2018 GOT7 2018 World Tour 「Eyes On You」世界巡迴演唱會
-2018-2019 GOT7 ARENA SPECIAL 2018-2019 "Road 2 U"
-2019 GOT7 Japan Tour 2019「タイトル未定」
-2019 GOT7 2019 World Tour 「KEEP SPINNING」世界巡迴演唱會
-初一位:
-	2015/10/6 If You Do《MAD》
-改名:
-	Jr. 2016/8/16 改用本名 珍榮 進行活動
-小分隊：
-	JJ Project: JB、珍榮
-	Jus2：JB、有謙
-</pre>
+				<h2>{{Subject.name}}題庫</h2>
+				<pre>{{Subject.description}}</pre>
 			</div>
 		</div>
 	</div>		

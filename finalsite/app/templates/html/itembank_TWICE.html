@@ -28,25 +28,18 @@
 						<li class="icon icon-circle-blank"><a title="">題庫</a></li>
 						<br>
 						<div class="dropdown-content">
-							<a href="{{ "itembank_BTS" }}">BTS</a>
-						    <a href="{{ "itembank_EXO" }}">EXO</a>
-						    <a href="{{ "itembank_GOT7" }}">GOT7</a>
-						    <a href="{{ "itembank_seventeen" }}">seventeen</a>
-						    <a href="{{ "itembank_SJ" }}">SJ</a>
-						    <a href="{{ "itembank_TWICE" }}">TWICE</a>
-						    
+							{% for group in groups %}
+	                            <a href="{{ group.descriptionlink }}">{{ group.name }}</a>
+							{% endfor %}
 						</div>
 					</div>
 					<div class="dropdown">
 						<li class="icon icon-circle-blank"><a title="">模擬題</a></li>
 						<br>
 						<div class="dropdown-content">
-						    <a href="{{ "quiz_BTS" }}">BTS</a>
-						    <a href="{{ "quiz_EXO" }}">EXO</a>
-						    <a href="{{ "quiz_GOT7" }}">GOT7</a>
-						    <a href="{{ "quiz_seventeen" }}">seventeen</a>
-						    <a href="{{ "quiz_SJ" }}">SJ</a>
-						    <a href="{{ "quiz_TWICE" }}">TWICE</a>
+						    <{% for group in groups %}
+	                            <a href="{{ group.quizlink }}">{{ group.name }}</a>
+							{% endfor %}
 						</div>
 					</div>
 				</ol>
@@ -58,157 +51,8 @@
 	<div id="page" class="container">
 		<div id="content">
 			<div class="title">
-				<h2>TWICE題庫</h2>
-<pre>
-出道日期：	
-	K：2015/10/20
-	J：2017/06/28
-粉絲名公佈日期：
-	2015/11/04
-韓語：
-正規專輯
-2017/10/30 Twicetagram
-改版專輯
-2017/12/11 Merry&Happy 
-迷你專輯
-2015/10/20 THE STORY BEGINS
-2016/04/25 PAGE TWO
-2016/10/24 TWICEcoaster: LANE 1
-2017/05/15 SIGNAL
-2018/04/09 What is Love?
-2018/11/05 YES or YES
-2019/04/22 FANCY YOU
-特別專輯
-2017/02/20 TWICEcoaster: LANE 2
-2018/07/09 Summer Nights
-2018/12/12 The year of "Yes"
-日語
-正規專輯
-2018/09/12 BDZ 
-改版專輯
-2018/12/26 BDZ -Repackage-
-精選專輯
-2017/06/28 #TWICE
-2019/03/06 #TWICE2
-單曲
-2017/10/18 One More Time
-2018/02/07 Candy Pop
-2018/05/16 Wake Me Up
-2019/07/17 HAPPY HAPPY
-2019/07/24 Breakthrough
-
-OST
-2018/06/15 I WANT YOU BACK
-
-成員年齡（排序）：
-	娜璉(林娜璉) 1995/09/22
-	定延(俞定延) 1996/11/11
-	Momo(平井桃) 1996/11/09
-	Sana(湊崎紗夏) 1996/12/29
-	志效(朴志效) 1997/02/01
-	Mina(名井南) 1997/03/24
-	多賢(金多賢) 1998/05/28
-	彩瑛(孫彩瑛) 1999/04/23
-	子瑜(周子瑜)1999/06/14
-
-歷年來臺
-	QQ尚未
-
-應援口號順序
-林娜璉-俞定延-Momo醬- Sana醬-朴志效- Mina醬-金多賢-孫彩瑛-周子瑜 one in a million 世界上獨一無二的 Twice
-
-MV破億順序
-like ooh ahh 
-一億2016 11.11 兩億2017 11.02
-cheer up
-一億 2016 11.17 兩億 2017 08.09 三億2018 11.04
-TT 
-一億2017 01.02 兩億2017 05.26 三億2017/12/22 四億2018 09.17
-knock knock 
-一億2017 05.20 兩億2018 08.05
-Signal
-一億2017.08.30 兩億2019 02.07
-Likey
-一億2017.12.03 兩億2018.03.08 三億2018.09.16
-heart shaker
-一億2018.01.22 兩億2018.07.11
-What is love 
-一億2018.05.15 兩億2018.10.11
-Dance The Night Away 
-一億2018.09.06
-Yes or Yes 
-一億2018 12.14
-
-團名寓意：「透過舞台令耳朵得到感動之後，再為眼睛帶來多一次感動。」
-
-問候語：「One in a million」，意味著要成為百萬偶像團體中的唯一。
-
-電視劇：
-	2016 oh My God! Tip 娜璉
-專屬電影：
-	2018/12/7 TWICELAND 
-
-專屬綜藝：
-	2015 TWICE TV
-	2015 TWICE TV2
-	2016 TWICE優雅的私生活
-	2016 TWICE TV3
-	2016 TWICE TV BEGINS
-	2016 TWICE PRIME
-	2016 TWICE TV 伙食團的大冒險
-	2016 TWICE TV MELODY PROJECT
-	2016 TWICE TV4
-	2017 TWICE LOST:TIME
-	2017 TWICE TV 4 Roommate
-	2017 TWICE TV SPECIAL
-	2017 TWICE Line Live
-	2017 TWICE TV 5
-	2017 TWICE TV 6
-	2018 TWICE TV 2018
-	2018 TWICE TV "What is Love?"
-	2018 TWICE 5分鐘廣播
-	2018 TWICE TV "Dance The Night Away"
-	2018 二SaMo秀 TuesdaySanaMomoShow
-	2018 Nayeon TV
-	2018 TWICE TV "YES or YES"
-	2018 TWICE TV "The Best Thing I Ever Did"
-	2019 TWICE TV "YES or YES" Special
-	2019 TWICE 'Star Road'
-	2019 TWICE Vlog "FANCY"
-	2019 TWICE TV "FANCY"
-固定節目
-	2016/2/21－4/10 真正的男人：女軍特輯第四季 多賢
-	2016/4/13－2017/2/15  Weekly Idol：Idol is 完美 多賢
-	2016/7/3－2017/1/22 人氣歌謠 固定MC 
-	2016/8/5－8/19 叢林的法則-新喀里多尼亞篇 定延
-	2016/7/27－8/17 	Hit The Stage Momo 定延
-	2017/6/6－9/5 鍋墊 定延、Momo、Sana、多賢
-	2019/12/4－3/14 超級實習生 全員，除娜璉
-巡迴演唱會：
-	2017首次巡迴 TWICELAND - The Opening 
-	2018 第二次巡迴TWICELAND ZONE 2 : Fantasy Park
-	2018 首次日本巡迴fTWICE 1st Arena Tour 2018 : BDZ
-	2019 首次日本巨蛋巡迴TWICE DOME TOUR 2019 : #Dreamday
-	2019 首次世界巡迴 TWICE WORLD TOUR 2019 : TWICELIGHTS
-關於告示牌&AMA：
-	#billboard
-2016/11/2
-		TWICEcoaster: LANE 登上世界專輯榜單第三名
-〈TT〉登上世界單曲榜單第二名。
-		2017/11/7
-Twicetagram登上世界專輯榜冠軍
-發展歷程
-2016/4/26，主打歌〈CHEER UP〉在韓國八大音源榜單達成「All-Kill」
-2016/5/5 M! Countdown 初一位
-2017/11/16，日本NHK官方公布TWICE將出演NHK紅白歌合戰
-2018/12/31 再度登上第69回NHK紅白歌合戰
-
-品牌/宣傳大使：
-2015	史努比 The Peanuts Movie宣傳大使
-2016	I.Seoul.U 韓國觀光大使
-2019	雅詩蘭黛 Estée Lauder韓國區品牌大使
-2017、2018、2019 韓國寶礦力水得
-</pre>
+				<h2>{{Subject.name}}題庫</h2>
+				<pre>{{Subject.description}}</pre>
 			</div>
 		</div>
 	</div>		

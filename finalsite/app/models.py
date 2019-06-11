@@ -20,3 +20,26 @@ class Photo(models.Model):
 
 	class Meta:
 		ordering = ["-timestamp"]
+
+class Group(models.Model):
+	vid = models.CharField(max_length=200)
+	name = models.CharField(max_length=200)
+	description = models.TextField()
+	quizlink = models.CharField(max_length=200)
+	descriptionlink = models.CharField(max_length=200)
+
+	def __str__(self):
+		return self.name
+
+class Quiz(models.Model):
+	question = models.CharField(max_length=1000)
+	ansA = models.CharField(max_length=200)
+	ansB = models.CharField(max_length=200)
+	ansC = models.CharField(max_length=200)
+	real_ans = models.CharField(max_length=200)
+	vid = models.ForeignKey('Group',on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.question
+
+
